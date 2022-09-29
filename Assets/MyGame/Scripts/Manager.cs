@@ -35,6 +35,18 @@ public class Manager : MonoBehaviour
      }
 
 
+    /*public int GetValUpTo255()
+    {
+        return (int)Random.Range(0f, 255f);
+    }
+
+    private Color GetRandomColor()
+    {
+        Color a = new Color32(GetValUpTo255, GetValUpTo255, GetValUpTo255, GetValUpTo255);
+        return a;
+    }
+    */
+
     public void blueDifferent()
     {
         buttonBlue.GetComponent<Image>().color = Random.ColorHSV();
@@ -51,6 +63,25 @@ public class Manager : MonoBehaviour
 
     public void isChanged(int buttonNumber)
     {
+
+        /* switch (buttonNumber)
+        {
+            case1:
+                buttonBlue.GetComponent<Image>().color = Color.yellow;
+                blueDifferent = true;
+                break;
+            case2:
+                buttonGreen.GetComponent<Image>().color = Color.yellow;
+                greenDifferent = true;
+                break;
+            case2:
+                buttonRed.GetComponent<Image>().color = Color.yellow;
+                redDifferent = true;
+                break;
+
+      } */
+
+
         if (buttonNumber == 0)
             blueButtonSwitched = true;
 
@@ -59,20 +90,16 @@ public class Manager : MonoBehaviour
 
         if (buttonNumber == 2)
             redButtonSwitched = true;
-
-        if (blueButtonSwitched && greenButtonSwitched && redButtonSwitched)
+        // !buttonNextScene.Interactable && ...  ist auch möglich
+        if (buttonNextScene.interactable == false && blueButtonSwitched && greenButtonSwitched && redButtonSwitched)
             buttonNextScene.interactable = true;
     }
 
 
     public void SwitchTheScene()
     {
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         SceneManager.LoadScene(1);
-    }
-
-    public void BackToFirstScene()
-    {
-        SceneManager.LoadScene(0);
     }
 
 }
