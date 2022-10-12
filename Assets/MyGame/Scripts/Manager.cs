@@ -21,8 +21,6 @@ public class Manager : MonoBehaviour
     private bool redButtonSwitched;
 
 
-
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -78,7 +76,6 @@ public class Manager : MonoBehaviour
                 buttonRed.GetComponent<Image>().color = Color.yellow;
                 redDifferent = true;
                 break;
-
       } */
 
 
